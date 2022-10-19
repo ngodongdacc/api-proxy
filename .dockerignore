@@ -1,0 +1,9 @@
+# Versioning and metadata
+.git
+.gitignore
+.dockerignore
+.vscode
+
+# Build dependencies
+node_modules
+bitbucket-pipelines.yml

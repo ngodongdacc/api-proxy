@@ -1,0 +1,36 @@
+image: node:16
+clone:
+  depth: full    # SonarCloud scanner needs the full history to assign issues properly
+definitions:
+  services:
+    docker:
+      memory: 2048
+  caches:
+    sonar: ~/.sonar/cache  # Caching SonarCloud artifacts will speed up your build
+  steps:
+    - step: &test
+        name: Code testing
+        caches:
+          - node
+        artifacts:
+          - coverage/**  # the coverage report generated from `npm run test:cov`
+        script:
+          - yarn install
+          - yarn test:cov --maxWorkers=20%
+          - pipe: sonarsource/sonarcloud-scan:1.4.0
+          - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
+
+pipelines:
+  pull-requests:
+    feature/*:
+      - parallel:
+          - step: *test
+    bugfix/*:
+      - parallel:
+          - step: *test
+    hotfix/*:
+      - parallel:
+          - step: *test
+  branches:
+    develop:
+      - step: *test

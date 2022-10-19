@@ -1,0 +1,317 @@
+import { CreateUserDto } from '../dto/create-user.dto';
+import { UpdateUserDto } from '../dto/update-user.dto';
+
+export const dataCreate: CreateUserDto = {
+  first_name: 'LENA',
+  last_name: 'active',
+  email: 'btanguyet@cmcglobal.vn',
+  password: '123456',
+  email2: '',
+  nickname: '',
+  gender: '',
+  mobile: '',
+  send_notif: false,
+  org: {
+    org_id: 1,
+    org_type: 'test',
+    name: 'org1',
+    name_chi: 'orgchi',
+    estimated_stuff: '',
+    lat: '',
+    lon: '',
+    include_in_eo: false,
+    short_name: '',
+    create_at: new Date(),
+    update_at: new Date(),
+  },
+  user_role: {
+    user_role_id: '',
+    role_name: '',
+    scheduler_access: false,
+    control_access: false,
+    create_at: new Date(),
+    update_at: new Date(),
+  },
+};
+
+export const lackEmailDataCreate: CreateUserDto = {
+  first_name: '',
+  last_name: 'active',
+  email: '',
+  password: '123456',
+  email2: '',
+  nickname: '',
+  gender: '',
+  mobile: '',
+  send_notif: false,
+  org: {
+    org_id: 1,
+    org_type: 'test',
+    name: 'org1',
+    name_chi: 'orgchi',
+    estimated_stuff: '',
+    lat: '',
+    lon: '',
+    include_in_eo: false,
+    short_name: '',
+    create_at: new Date(),
+    update_at: new Date(),
+  },
+  user_role: {
+    user_role_id: '',
+    role_name: '',
+    scheduler_access: false,
+    control_access: false,
+    create_at: new Date(),
+    update_at: new Date(),
+  },
+};
+
+export const invalidPasswordDataCreate: CreateUserDto = {
+  first_name: '',
+  last_name: 'active',
+  email: 'ricky.kung@clpsec.com',
+  password: '',
+  email2: 'ricky2.kung@clpsec.com',
+  nickname: '',
+  gender: '',
+  mobile: '',
+  send_notif: false,
+  org: {
+    org_id: 1,
+    org_type: 'test',
+    name: 'org1',
+    name_chi: 'orgchi',
+    estimated_stuff: '',
+    lat: '',
+    lon: '',
+    include_in_eo: false,
+    short_name: '',
+    create_at: new Date(),
+    update_at: new Date(),
+  },
+  user_role: {
+    user_role_id: '',
+    role_name: '',
+    scheduler_access: false,
+    control_access: false,
+    create_at: new Date(),
+    update_at: new Date(),
+  },
+};
+
+export const existDataCreate: CreateUserDto = {
+  first_name: '',
+  last_name: 'active',
+  email: 'ricky.kung@clpsec.com',
+  password: '1234567@Ricky',
+  email2: 'ricky2.kung@clpsec.com',
+  nickname: '',
+  gender: '',
+  mobile: '',
+  send_notif: false,
+  org: {
+    org_id: 1,
+    org_type: 'test',
+    name: 'org1',
+    name_chi: 'orgchi',
+    estimated_stuff: '',
+    lat: '',
+    lon: '',
+    include_in_eo: false,
+    short_name: '',
+    create_at: new Date(),
+    update_at: new Date(),
+  },
+  user_role: {
+    user_role_id: '',
+    role_name: '',
+    scheduler_access: false,
+    control_access: false,
+    create_at: new Date(),
+    update_at: new Date(),
+  },
+};
+
+export const dataGetAllUser = [
+  {
+    user_id: '13',
+    cognito_username: null,
+    first_name: 'Nicky',
+    last_name: 'Tsang',
+    email: 'nicky.tsang@clp.com.hk',
+    is_active: true,
+    create_at: '2022-01-17T03:19:38.082Z',
+    update_at: '2022-01-17T03:19:38.082Z',
+    org: {
+      org_id: '2',
+      org_type: 'school',
+      name: 'CLP Innovation',
+      name_chi: 'CLP Innovation',
+      estimated_stuff: null,
+      lat: 22.4258189,
+      lon: 114.2076183,
+      include_in_eo: true,
+      short_name: 'HKSTP',
+      create_at: '2020-01-20T08:52:27.263Z',
+      update_at: '2020-01-20T08:52:27.263Z',
+    },
+    user_role: {
+      user_role_id: '2',
+      role_name: 'admin',
+      scheduler_access: true,
+      control_access: true,
+    },
+  },
+  {
+    user_id: '14',
+    cognito_username: null,
+    first_name: 'Serena',
+    last_name: 'Pau',
+    email: 'serena.pau@clp.com.hk',
+    is_active: true,
+    create_at: '2022-01-17T03:20:00.160Z',
+    update_at: '2022-01-17T03:20:00.160Z',
+    org: {
+      org_id: 2,
+      org_type: 'school',
+      name: 'CLP Innovation',
+      name_chi: 'CLP Innovation',
+      estimated_stuff: null,
+      lat: 22.4258189,
+      lon: 114.2076183,
+      include_in_eo: true,
+      short_name: 'HKSTP',
+      create_at: '2020-01-20T08:52:27.263Z',
+      update_at: '2020-01-20T08:52:27.263Z',
+    },
+    user_role: {
+      user_role_id: 2,
+      role_name: 'admin',
+      scheduler_access: true,
+      control_access: true,
+    },
+  },
+];
+
+export const dataGetUserById = {
+  user_id: '14',
+  cognito_username: null,
+  first_name: 'Serena',
+  last_name: 'Pau',
+  email: 'serena.pau@clp.com.hk',
+  is_active: true,
+  create_at: '2022-01-17T03:20:00.160Z',
+  update_at: '2022-01-17T03:20:00.160Z',
+  org: {
+    org_id: 2,
+    org_type: 'school',
+    name: 'CLP Innovation',
+    name_chi: 'CLP Innovation',
+    estimated_stuff: null,
+    lat: 22.4258189,
+    lon: 114.2076183,
+    include_in_eo: true,
+    short_name: 'HKSTP',
+    create_at: '2020-01-20T08:52:27.263Z',
+    update_at: '2020-01-20T08:52:27.263Z',
+  },
+  user_role: {
+    user_role_id: 2,
+    role_name: 'admin',
+    scheduler_access: true,
+    control_access: true,
+  },
+};
+
+export const dataGetAllUserByParams = {
+  user_id: '1295',
+  cognito_username: 'testuser19@gmail.com',
+  first_name: null,
+  last_name: null,
+  email: null,
+  is_active: null,
+  create_at: '2022-08-29T20:03:25.663Z',
+  update_at: '2022-08-29T20:03:25.663Z',
+  org: null,
+  user_role: null,
+};
+
+export const user_id = '1';
+
+export const mock_user_id = '1000';
+
+export const dataUpdate: UpdateUserDto = {
+  first_name: 'string',
+  last_name: 'string',
+  email: 'test@gmail.com',
+  password: '1234567@HHa',
+};
+
+export const invalidEmaildataUpdate: UpdateUserDto = {
+  first_name: 'string',
+  last_name: 'string',
+  email: '',
+  password: '1234567@HHa',
+};
+
+export const invalidPassworddataUpdate: UpdateUserDto = {
+  first_name: 'string',
+  last_name: 'string',
+  email: 'test@gmail.com',
+  password: '123456',
+};
+
+export const responseUserNew = {
+  user_id: '1534',
+  cognito_username: '',
+  first_name: 'kakakkakaka',
+  last_name: 'string',
+  email: 'test@gmail.com',
+  is_active: null,
+  create_at: new Date(),
+  update_at: new Date(),
+  org: null,
+  user_role: null,
+};
+
+export const responseUser = {
+  user_id: '1720',
+  cognito_username: 'test@gmail.com',
+  first_name: 'kakakkakaka',
+  last_name: 'string',
+  email: 'test@gmail.com',
+  email2: 'ricky2.kung@clpsec.com',
+  nickname: 'string',
+  gender: 's',
+  mobile: 'string',
+  post: null,
+  is_active: true,
+  is_org_admin: true,
+  create_at: new Date(),
+  update_at: new Date(),
+  send_notif: true,
+  org: {
+    org_id: 1,
+    org_type: 'test',
+    name: 'org1',
+    name_chi: 'orgchi',
+    estimated_stuff: '',
+    lat: '',
+    lon: '',
+    include_in_eo: false,
+    short_name: '',
+    create_at: new Date(),
+    update_at: new Date(),
+  },
+};
+
+export const mockResponseDeleteData = {
+  cognito_username: 'test@gmail.com',
+  first_name: 'kakakkakaka',
+  last_name: 'string',
+  email: 'test@gmail.com',
+  is_active: false,
+  create_at: new Date(),
+  update_at: new Date(),
+};
