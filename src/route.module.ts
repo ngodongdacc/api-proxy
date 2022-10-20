@@ -8,7 +8,7 @@ import { UserModule } from './api/sec-api-user/user/user.module';
   imports: [
     RouterModule.register([
       {
-        path: 'api',
+        path: '',
         children: [
           {
             path: '/user',

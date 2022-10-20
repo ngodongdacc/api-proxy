@@ -1,8 +1,5 @@
-import { secApiUserConfiguration } from '../api/sec-api-user/config/configuration';
-
 export default () => ({
   // app port
-  ...secApiUserConfiguration,
   env: process.env.APP_PORT,
   AWS_COGNITO_CLIENT_ID: process.env.AWS_COGNITO_CLIENT_ID,
   AWS_COGNITO_REGION: process.env.AWS_COGNITO_REGION,

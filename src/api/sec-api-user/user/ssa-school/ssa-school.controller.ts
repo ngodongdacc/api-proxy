@@ -1,28 +1,28 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards, UseInterceptors } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards, Request, Header, Headers, } from '@nestjs/common';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
+import { AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
+import { ClientService, Http } from 'src/common/service/client.service';
 import { AuthorizationGuard } from '../../../../authorization/authorization.guard';
-import { TransformInterceptor } from '../../../../interceptor/transformReq.interceptor';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { FindUserDto } from '../dto/find-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { UserController } from '../user.controller';
 import { UserService } from '../user.service';
 
+@ApiBearerAuth()
 @ApiTags('SSA School')
 @Controller('ssa-school')
-@UseInterceptors(TransformInterceptor)
-@UseGuards(AuthorizationGuard) // comment to bypass authentication for local testing
+// @UseGuards(AuthorizationGuard) // comment to bypass authentication for local testing
 export class SsaSchoolController implements UserController {
-  constructor(private readonly userService: UserService) { }
-
-  @Get()
-  findAll(@Query() body: FindUserDto) {
-    return this.userService.findAll(body);
+  constructor(private readonly clientService: Http) {}
+  @Get('')
+  async findAll(@Request() req: Request) {
+    return this.clientService.http(req);
   }
 
   @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.createUserHandler(createUserDto);
+  create(req: Request) {
+    return null; // this.userService.createUserHandler(body);
   }
 
   // @Post('/login')
@@ -31,23 +31,23 @@ export class SsaSchoolController implements UserController {
   // }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(id);
+  findOne(req: Request) {
+    return null; // this.userService.findOne(id);
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.updateUserHandler(id, updateUserDto);
+  update(req: Request) {
+    return null; // this.userService.updateUserHandler(id, updateUserDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.userService.deleteUserHandler(id);
+  remove(req: Request) {
+    return null; // this.userService.deleteUserHandler(id);
   }
 
   @Put('unblock/:id')
-  unblock(@Param('id') id: string) {
-    return this.userService.unblockUserHandle(id);
+  unblock(req: Request) {
+    return null; // this.userService.unblockUserHandle(id);
   }
 
   //@Post('/auth')

@@ -36,7 +36,7 @@ export class AuthorizationGuard implements CanActivate {
       req.token = this.getToken(req);
       return true;
     } catch (error) {
-      console.log(error);
+      console.log('error:: ', error);
       throw new UnauthorizedException(error);
     }
   }

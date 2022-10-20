@@ -1,7 +1,7 @@
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ClientService } from 'src/common/service/client.service';
+import { ClientService, Http } from 'src/common/service/client.service';
 import { Auth0UserController } from './auth0/auth0.controller';
 import { Auth0Service } from './auth0/auth0.service';
 import { CognitoService } from './cognito/cognito.service';
@@ -33,7 +33,7 @@ import { UserService } from './user.service';
     StoreService,
     Auth0Service,
     CognitoService,
-    ClientService,
+    Http,
   ],
 })
 export class UserModule {}

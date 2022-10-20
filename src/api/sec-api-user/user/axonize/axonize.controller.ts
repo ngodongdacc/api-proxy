@@ -11,7 +11,6 @@ import {
   HttpStatus,
   HttpCode,
   Headers,
-  UseInterceptors,
 } from '@nestjs/common';
 import { AxonizeService } from './axonize.service';
 import { ApiBasicAuth, ApiBearerAuth, ApiTags } from '@nestjs/swagger';
@@ -19,12 +18,10 @@ import { CreateAxonizeDto } from './dto/create-axonize.dto';
 import { UpdateAxonizeDto } from './dto/update-axonize.dto';
 import { AuthorizationGuard } from '../../../../authorization/authorization.guard';
 import { DeleteAxonizeDto } from './dto/delete-axonize.dto';
-import { TransformInterceptor } from '../../../../interceptor/transformReq.interceptor';
 import { GetApiKeyAxonizeDto } from './dto/api-key-axonize.dto';
 
 @ApiTags('Axonize')
 @Controller('')
-@UseInterceptors(TransformInterceptor)
 @UseGuards(AuthorizationGuard)
 @ApiBearerAuth('token')
 @ApiBasicAuth('axonize_api_token')

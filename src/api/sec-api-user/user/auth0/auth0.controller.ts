@@ -9,7 +9,6 @@ import {
   HttpException,
   HttpStatus,
   HttpCode,
-  UseInterceptors,
   Put,
   Headers,
 } from '@nestjs/common';
@@ -18,12 +17,10 @@ import { ApiBasicAuth, ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { CreateAuth0Dto } from './dto/create-auth0.dto';
 import { UpdateAuth0Dto } from './dto/update-auth0.dto';
 import { AuthorizationGuard } from '../../../../authorization/authorization.guard';
-import { TransformInterceptor } from '../../../../interceptor/transformReq.interceptor';
 
 @ApiTags('Auth0')
 @Controller('')
 @UseGuards(AuthorizationGuard)
-@UseInterceptors(TransformInterceptor)
 @ApiBearerAuth('token')
 @ApiBasicAuth('auth0_api_token')
 export class Auth0UserController {
