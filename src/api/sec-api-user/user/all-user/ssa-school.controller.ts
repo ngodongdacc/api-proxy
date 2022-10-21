@@ -4,12 +4,12 @@ import { ClientUserService } from '../clientUser.service';
 import { UserController } from '../user.controller';
 
 @ApiBearerAuth()
-@ApiTags('SSA School')
-@Controller('ssa-school')
+@ApiTags('User')
+@Controller('')
 // @UseGuards(AuthorizationGuard) // comment to bypass authentication for local testing
-export class SsaSchoolController implements UserController {
+export class AllUserController implements UserController {
   constructor(private readonly clientUserService: ClientUserService) {}
-  @All(['', '/unblock/:id', '/:id'])
+  @All([''])
   async all(@Request() req: Request) {
     return this.clientUserService.request(req);
   }
